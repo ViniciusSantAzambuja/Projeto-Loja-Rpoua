@@ -47,7 +47,7 @@ export default{
 
 img{
     max-width: 100%;
-    height: 39rem;
+    height: 600px;
     border-radius: .5rem;
 }
 </style>

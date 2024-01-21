@@ -7,7 +7,7 @@
                 <h1><router-link to="/">LOGO</router-link></h1>
                 <nav>
                     <ul>
-                        <li><router-link to="/">CAMISETAS</router-link></li>
+                        <li><router-link to="/camisetas">CAMISETAS</router-link></li>
                         <li><router-link to="/">MOLETONS</router-link></li>
                         <li><router-link to="/">CALÇAS</router-link></li>
                     </ul>

@@ -16,15 +16,21 @@ button{
     cursor: pointer;
 }
 .direita {
-    margin-left: -1rem;
+    right: 0;
 }
 
 .esquerda{
-    margin-right: -1rem;
+   left: 0;
 }
 
 .esquerda img{
     transform: rotate(180deg);
+}
+
+.button-banner{
+    display: inline-block;
+    position: absolute;
+    height: 600px;
 }
 
 .button-banner img{

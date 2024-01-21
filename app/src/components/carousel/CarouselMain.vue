@@ -111,16 +111,32 @@ import CarouselControls from './CarouselControls.vue';
 
 .banner-capa{
     display: flex;
-    justify-content: center ;
+    justify-content: center;
 }
 
 .slider-div{
     position: relative;
-    width: 900px;
-    height: 400px;
+    width: 1200px;
+    height: 600px;
     overflow: hidden;
+    top: 5rem
 }
 
+.banner-capa .direita {
+    margin-left: -1rem;
+}
 
+.banner-capa .esquerda{
+    margin-right: -1rem;
+}
+
+.banner-capa .esquerda img{
+    transform: rotate(180deg);
+}
+
+.banner-capa .button-banner img{
+    height: 1.2rem;
+    width: 1.2rem;
+}
 
 </style>

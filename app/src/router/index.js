@@ -15,10 +15,21 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   },
   {
+    path: '/camisetas',
+    name: 'camisetas',
+    component: () => import('../views/T-shirts.vue')
+  },
+  {
+    path: '/single',
+    name: 'single',
+    component: () => import('../components/items/itemSingleVis.vue')
+  },
+  {
     path:'/carrinho',
     name: 'carrinho',
     component: () => import(/* webpackChunkName: "about" */ '../views/ShoprCartView.vue')
-  }
+  },
+  
 ]
 
 const router = createRouter({
