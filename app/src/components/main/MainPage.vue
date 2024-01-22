@@ -35,30 +35,32 @@ export default {
         ]
 
         
-        
         const itemObjTest = ref( { roupas: [
         {
             name: 'Camisa vermelha padrão',
+            dressType: 'camiseta',
             preco: `R$ ${80}`,
             textoParcela: "Em até 4x de R$20 sem juros no cartão.",
         }, 
         {
             name: 'Camisa vermelha',
+            dressType: 'camiseta',
             preco: `R$ ${120}`,
             textoParcela: "Em até 4x de R$30 sem juros no cartão.",
         },
         {
             name: 'Camisa vermelha diferenciada',
+            dressType: 'camiseta',
             preco: `R$ ${160}`,
             textoParcela: "Em até 4x de R$40 sem juros no cartão.",
         },
         {
             name: 'Camisa vermelha diferenciada 2.0',
+            dressType: 'camiseta',
             preco: `R$ ${200}`,
             textoParcela: "Em até 4x de R$50 sem juros no cartão.",
         }
         ]})
-         
         
 
             return{

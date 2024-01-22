@@ -1,5 +1,6 @@
-<template>
-<div class="item" v-for="items in itemObjTest.roupas" :key="items.name">
+<template>   
+<div class="item" v-for="items in itemObjTest.roupas" :key="items.name" @click="viewItem(items)">
+    <RouterLink :to="`/${items.dressType}/${items.name}`">     
      <div class="item-head">
         <img src="@/assets/9586688.jpg" alt="Camiseta vermelha com um jogador de beisebol em um fundo azul claro estampado nela"/>
     </div>
@@ -13,12 +14,27 @@
     <div class="item-footer">
                                 
     </div>
+    </RouterLink>       
 </div>
+<RouterView />
 </template>
 
 <script>
+import { RouterLink, RouterView } from 'vue-router';
 export default{
     props: ["itemObjTest"],
+    components: { RouterLink, RouterView },
+    methods: { viewItem(item){
+        this.$router.push({
+            path: `/${item.dressType}/${item.name}`,
+            query:{
+                preco: item.preco,
+                textoParcela: item.textoParcela,
+                dressType: item.dressType
+            },
+        });
+    }
+ }
 }
 </script>
 
@@ -36,6 +52,7 @@ html{
 }
 
 h1, h2, h3, h4, h5, a{
+    text-decoration: none;
     font-family: 'Rubik', sans-serif;   
 }
 

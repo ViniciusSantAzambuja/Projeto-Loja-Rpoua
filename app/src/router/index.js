@@ -25,6 +25,11 @@ const routes = [
     component: () => import('../components/items/itemSingleVis.vue')
   },
   {
+    path: '/:type/:name',
+    name: 'singleItem',
+    component: () => import('../components/items/itemSingleVis.vue'),
+  },
+  {
     path:'/carrinho',
     name: 'carrinho',
     component: () => import(/* webpackChunkName: "about" */ '../views/ShoprCartView.vue')

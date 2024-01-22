@@ -2,7 +2,7 @@
  
 <div class="list-items view-main">
     <div class="items">
-        <itemsInside :itemObjTest="itemObjTest"></itemsInside>
+       <itemsInside :itemObjTest="itemObjTest"></itemsInside>
     </div>
 </div>
 
@@ -13,6 +13,7 @@ import itemsInside from './itemsInside.vue'
 export default{
     props: ["itemObjTest"],
     components: { itemsInside },
+
 }
 </script>
 
