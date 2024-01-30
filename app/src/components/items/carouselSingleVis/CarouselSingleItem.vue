@@ -106,7 +106,8 @@ import CarouselControls from '../../carousel/CarouselControls.vue';
 
 <style scoped>
 .view-main{
-    height: 100vh;
+    height: 500px;
+    background-color: #d9d99b;
 }
 
 .banner-capa{

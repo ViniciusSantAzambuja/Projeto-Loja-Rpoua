@@ -20,9 +20,19 @@ const routes = [
     component: () => import('../views/T-shirts.vue')
   },
   {
+    path: '/moletons',
+    name: 'moletons',
+    component: () => import('../views/SweatshirtsView.vue')
+  },
+  {
+    path: '/calças',
+    name: 'calças',
+    component: () => import('../views/PantsView.vue')
+  },
+  {
     path: '/single',
     name: 'single',
-    component: () => import('../components/items/itemSingleVis.vue')
+    component: () => import('../components/shop/ShopCartItemsGroup.vue')
   },
   {
     path: '/:type/:name',

@@ -1,40 +1,40 @@
 <template>
     <main class="main-bg">
         <itemsGroup :itemObjTest="itemObjTest"></itemsGroup>
-    </main>    
+    </main> 
 </template>
 
 <script>
-import { ref } from "vue";
+import { ref } from "vue"; 
 import itemsGroup from '@/components/items/itemsGroup.vue';
 export default{
-    components: { itemsGroup },
+    components:{ itemsGroup },
     setup(){
         const itemObjTest = ref( { roupas: [
         {
             
-            name: 'Camisa vermelha padrão',
+            name: 'Moletom verde',
             dressType: 'camiseta',
             preco: 80,
-            available: 12,
+            available: 76,
         }, 
         {
-            name: 'Camisa vermelha',
+            name: 'Moletom Azul e Preto',
             dressType: 'camiseta',
             preco: 120,
             available: 23,
         },
         {
-            name: 'Camisa vermelha diferenciada',
+            name: 'Moletom listrado',
             dressType: 'camiseta',
             preco: 160,
-            available: 42,
+            available: 54,
         },
         {
-            name: 'Camisa vermelha diferenciada 2.0',
+            name: 'Moletom Azul Marinho',
             dressType: 'camiseta',
             preco: 200,
-            available: 43,
+            available: 20,
         }
         ]})
         return{
@@ -48,5 +48,4 @@ export default{
 .main-bg{
     background-color: #d9d99b;
 }
-
 </style>

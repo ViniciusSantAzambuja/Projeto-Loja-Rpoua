@@ -8,8 +8,8 @@
                 <nav>
                     <ul>
                         <li><router-link to="/camisetas">CAMISETAS</router-link></li>
-                        <li><router-link to="/">MOLETONS</router-link></li>
-                        <li><router-link to="/">CALÇAS</router-link></li>
+                        <li><router-link to="/moletons">MOLETONS</router-link></li>
+                        <li><router-link to="/calças">CALÇAS</router-link></li>
                     </ul>
                 </nav>
                 <div class="search-bar-container">

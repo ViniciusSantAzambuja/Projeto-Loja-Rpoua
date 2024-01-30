@@ -7,8 +7,8 @@
     <div class="item-content">
         <div class="item-description">
             <h3 class="name-item">{{ items.name }}</h3>
-            <h3 class="price-item">{{ items.preco }}</h3>
-            <h3 class="parcela-item">{{ items.textoParcela }}</h3>
+            <h3 class="price-item">R${{ items.preco }}</h3>
+            <h3 class="parcela-item">Em até 4x de R${{ items.preco/4 }} sem juros no cartão.</h3>
         </div>
     </div>
     <div class="item-footer">
@@ -29,8 +29,8 @@ export default{
             path: `/${item.dressType}/${item.name}`,
             query:{
                 preco: item.preco,
-                textoParcela: item.textoParcela,
-                dressType: item.dressType
+                dressType: item.dressType,
+                available: item.available,
             },
         });
     }

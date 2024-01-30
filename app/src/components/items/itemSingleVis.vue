@@ -2,6 +2,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Rubik:wght@300;400&display=swap" rel="stylesheet">
+<main class="main-bg">
    <div class="main-single-item">
         <div class="infos-item">
         <div class="infos-left-side">
@@ -9,8 +10,8 @@
         </div>
            <div class="infos-right-side">
             <div class="infos-head">
-                <h2 @click="aumentaQtde">{{ $route.params.name }}</h2>
-                <h3>Disponíveis: {{ itemQtde }}</h3>
+                <h2>{{ $route.params.name }}</h2>
+                <h3>Disponíveis: {{ $route.query.available }}</h3>
             </div>
             <div class="tamanho">
                 <ul>
@@ -18,13 +19,14 @@
                 </ul>
             </div>
             <div class="infos-pay-options">
-                <h3>{{ $route.query.preco }}</h3>
-                <span>{{$route.query.textoParcela}}</span>
-                <button type="button"><span>COMPRAR</span></button>
+                <h3>R${{ $route.query.preco }}</h3>
+                <span>Em até 4x de R${{ $route.query.preco/4 }} sem juros no cartão.</span>
+                <button type="button" @click="addItemToShopCart"><span>COMPRAR <fontAwesome icon="cart-plus"></fontAwesome></span></button>
             </div>
            </div>
         </div>
     </div>
+</main>
 </template>
 
 <script>
@@ -33,20 +35,37 @@ export default{
     components: { CarouselSingleItem },
     data: () => ({
         slides: ["https://picsum.photos/id/1033/500/500", "https://picsum.photos/id/1035/500/500", "https://picsum.photos/id/1031/500/500"],
-        itemQtde: 50,  
         sizes: ['P', 'M', 'G', 'GG', 'XG'],
         currentIndex: -1, 
     }),
     methods: {
-        aumentaQtde(){
-            console.log(this.itemQtde);
-            this.itemQtde++;
-        },
         setCurrentIndex(index){
             this.currentIndex = index;
+        },
+        showSizeCurrentIndex(){
+            let currentSize = this.getSelectedSize
+            console.log(currentSize);
+        },
+        //acho melhor tentar de outra forma ou so usar assim msm até eu aprender a usar o vuex 
+        addItemToShopCart(){
+        this.$router.push({
+            path: "/carrinho",
+            query: {
+                    preco: this.$route.query.preco,
+                    name: this.$route.params.name,
+                    quantidade: 1,
+                    size: this.getSelectedSize
+                }
+            })
+        }
+    },
+    computed:{
+        getSelectedSize(){
+            return this.sizes[this.currentIndex];
         }
     },
     props:["name"]
+    
 }
 </script>
 
@@ -59,9 +78,14 @@ export default{
 h1, h2, h3, h4, h5, h6, span{
     font-family: 'Open Sans', sans-serif;
 }
+.main-bg{
+    background-color: #d9d99b;
+    height: 100vh;
+}
 .main-single-item{
+    position: relative;
     max-width: 1200px;
-    margin-top: 200px;
+    top: 100px;
 }
 .infos-item{
     display: flex;
@@ -175,5 +199,6 @@ h1, h2, h3, h4, h5, h6, span{
 }
 .infos-pay-options button span{
     font-size: 20px;
+    margin-left: 5px;
 }
 </style>
