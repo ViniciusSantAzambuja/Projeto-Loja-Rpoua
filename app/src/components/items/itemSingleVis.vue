@@ -37,6 +37,7 @@ export default{
         slides: ["https://picsum.photos/id/1033/500/500", "https://picsum.photos/id/1035/500/500", "https://picsum.photos/id/1031/500/500"],
         sizes: ['P', 'M', 'G', 'GG', 'XG'],
         currentIndex: -1, 
+        item:{}
     }),
     methods: {
         setCurrentIndex(index){
@@ -51,10 +52,10 @@ export default{
         this.$router.push({
             path: "/carrinho",
             query: {
-                    preco: this.$route.query.preco,
+                    price: this.$route.query.preco,
                     name: this.$route.params.name,
-                    quantidade: 1,
-                    size: this.getSelectedSize
+                    quantity: 1,
+                    size: this.getSelectedSize,
                 }
             })
         }

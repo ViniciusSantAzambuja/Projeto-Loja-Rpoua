@@ -2,22 +2,51 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Rubik:wght@300;400&display=swap" rel="stylesheet">
-    <div class="shop-cart-main">
-        <div class="empty-shop-cart">
+    <div class="shop-cart-main" >
+        <div class="empty-shop-cart" v-if="products.length === 0" @click="setProducts()">
             <fontAwesome icon="cart-shopping" class="cart-shopping-icon"/> 
             <h1>{{ emptyShopCartText }}</h1>
             <RouterLink to="/"><span>Clique aqui para voltar a página principal</span></RouterLink>
         </div>
+        <div class="shopCartWithItens" v-if="products.length > 0">
+            <ShopCartItemsGroup></ShopCartItemsGroup>
+        </div>
     </div>
+
 
 </template>
 
 
 <script>
+import ShopCartItemsGroup from './ShopCartItemsGroup.vue'
 export default{
+components: { ShopCartItemsGroup },
 data: () =>({
      emptyShopCartText : "Seu carinho está vazio",
-})
+     products: [],
+}),
+methods: {
+    setProducts(){
+        this.products.push(this.testeDeRota)
+        console.log(this.products);
+    }
+},
+computed: {
+    testeDeRota(){
+        if(this.$route.query !== undefined){
+            return {name: this.$route.query.name, size: this.$route.query.size, quantity: this.$route.query.quantity, price: this.$route.query.price}
+        }
+        return this.products
+    }
+},
+watch:{
+    name(){
+       if(this.name !== undefined){
+            this.testeDeRota()
+            this.verifyIfnameIsUndefined = true
+       }
+    },
+}
 }
 </script>
 
