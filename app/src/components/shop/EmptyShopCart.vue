@@ -3,7 +3,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Rubik:wght@300;400&display=swap" rel="stylesheet">
     <div class="shop-cart-main" >
-        <div class="empty-shop-cart" v-if="products.length === 0" @click="setProducts()">
+        <div class="empty-shop-cart" v-if="products.length === 0" >
             <fontAwesome icon="cart-shopping" class="cart-shopping-icon"/> 
             <h1>{{ emptyShopCartText }}</h1>
             <RouterLink to="/"><span>Clique aqui para voltar a página principal</span></RouterLink>
@@ -18,12 +18,13 @@
 
 
 <script>
+import store from '@/store';
 import ShopCartItemsGroup from './ShopCartItemsGroup.vue'
 export default{
 components: { ShopCartItemsGroup },
 data: () =>({
      emptyShopCartText : "Seu carinho está vazio",
-     products: [],
+     products: store.getters.getProducts,
 }),
 methods: {
     setProducts(){

@@ -30,6 +30,7 @@
 </template>
 
 <script>
+import store from '@/store';
 import CarouselSingleItem from './carouselSingleVis/CarouselSingleItem.vue'
 export default{
     components: { CarouselSingleItem },
@@ -58,6 +59,11 @@ export default{
                     size: this.getSelectedSize,
                 }
             })
+            
+            const product = {price: this.$route.query.preco, name: this.$route.params.name, quantity: 1, size: this.getSelectedSize}
+            store.commit('addProductsToShopCart', product)
+            
+            
         }
     },
     computed:{

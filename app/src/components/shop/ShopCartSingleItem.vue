@@ -20,16 +20,17 @@
     </div>
     <!--Passar isso aqui para o carrinho, já que ele que lida com os preços ou fazer algo prórpio para isso-->
     <div class="payment-check">
-            <span>TOTAL DO PEDIDO - <span>R${{ getTotalOrderPrice() }}</span>
+            <span>TOTAL DO PEDIDO - <span>R${{ showCurrentTotalOrderPrice() }}</span>
             </span>
     </div>
 </template>
 
 <script>
+import store from '@/store'
+
 export default{
    data: ()  => ({
-        products: [{name: "produto 1", size: "P", quantity: 1, price: 80}, {name: "produto 2", size: "M", quantity: 3, price: 200}, 
-        {name: "produto 3", size: "G", quantity: 2, price: 160}, {name: "produto 4", size: "GG", quantity: 10, price: 80},]
+        products: store.getters.getProducts,
    }),
    methods:{
         getTotalProductPrice(product){
@@ -47,9 +48,16 @@ export default{
         },
         removeProductFormShopCart(productToRemove){
             this.products = this.products.filter((product) => {return product !== productToRemove})
+            store.commit('removeProductFormShopCart', productToRemove)
         },
-        getTotalOrderPrice(){
-            return this.products.reduce((totalPrice, product) => totalPrice +=  product.price*product.quantity, 0)
+        showCurrentTotalOrderPrice(){
+            return this.getTotalOrderPrice
+        }
+   },
+   computed:{
+    getTotalOrderPrice(){
+        console.log(this.products);
+           return store.getters.getTotalOrderPrice
         }
    }
 }
@@ -75,9 +83,7 @@ button{
     flex-wrap: wrap;
 }
 .shopCart-item .shopCart-item-head{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    flex-wrap: wrap;
+    display: flex;
     margin-top: 30px;
     position: relative;
     right: 200px;
