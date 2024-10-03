@@ -1,6 +1,6 @@
 <template>
  
-<div class="list-items view-main">
+<div class="list-items">
     <div class="items">
        <itemsInside :itemObjTest="itemObjTest"></itemsInside>
     </div>
@@ -29,22 +29,19 @@ html{
     scroll-behavior: smooth;
 }
 
-.view-main{
-    height: 100vh;
-}
-
 .list-items{
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative; 
     flex-flow: column wrap;
+    padding: 0.5rem;
 }
 
 .items{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0.5rem;
+    grid-template-columns: repeat(4, 200px);
+    gap: 1rem;
 }
 
 

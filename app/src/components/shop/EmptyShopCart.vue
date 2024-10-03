@@ -65,7 +65,6 @@ h1, h2, h3, h4, h5, a{
 .shop-cart-main{
     max-width: 120rem;
     height: 100vh;    
-    background-color: #F8F8D9;
 }
 
 .empty-shop-cart{
@@ -106,7 +105,6 @@ h1, h2, h3, h4, h5, a{
 
 .empty-shop-cart a:hover{
     border: 0.1rem solid #2c2c2c;
-    background-color: #2c2c2c;
     color: #d9d99b;
 }
 </style>

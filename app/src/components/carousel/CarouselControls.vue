@@ -14,6 +14,7 @@ button{
     background: transparent;
     border:none;
     cursor: pointer;
+    color: #121212;
 }
 .direita {
     right: 0;

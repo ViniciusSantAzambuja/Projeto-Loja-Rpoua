@@ -57,48 +57,59 @@ h1, h2, h3, h4, h5, a{
 }
 
 .item{
-    height: 30rem;
-    width: 20rem;
+    height: 100%;
+    width: 100%;
     cursor: pointer;
     transition: all 50ms ease-in-out;
 }
 
 .item:hover{
-    border: 0.1rem solid #2C2C2C;
 }
 
 .item-head{
     display: flex;
     justify-content: center;
-    position: relative;
     top: 1rem;
 }
 
 .item-head img{
-    height: 15rem;
-    widows: 15rem;
+    padding: 10px;
+    height: 200px;
+    width: 200px;
 }
 
 .item-content{
     display: flex;
-    position: relative;
-    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
     flex-flow: column wrap;
     top: 1.35rem;
 }
 
 .item-content .item-description{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-left: 0.5rem;
-    color: #8b0000;
+    color: #121212;
     line-height: 1.2;
+}
+
+.item-content .item-description .name-item{
+    font-size: 16px;
+    word-break: keep-all;
+    text-align: center;
+    color: #121212;
 }
 
 .item-content .item-description .price-item{
     margin-top: 1.5rem;
+    color: #FF2400;
 }
 
 .item-content .item-description .parcela-item{
     margin-top: 1.2rem;
+    font-size: 14px;
 }
 
 .item-content .item-description h3{

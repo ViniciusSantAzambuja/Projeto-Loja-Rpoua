@@ -22,7 +22,7 @@ export default{
     transform: translateX(-50%);
     left: 50%;
     bottom: 1.5em;
-    z-index: 2;
+    z-index: 1;
 }
 .carousel-indicator-item{
     width: 15px;

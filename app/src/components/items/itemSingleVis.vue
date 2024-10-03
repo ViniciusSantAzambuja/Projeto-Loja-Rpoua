@@ -86,7 +86,6 @@ h1, h2, h3, h4, h5, h6, span{
     font-family: 'Open Sans', sans-serif;
 }
 .main-bg{
-    background-color: #d9d99b;
     height: 100vh;
 }
 .main-single-item{
@@ -188,7 +187,6 @@ h1, h2, h3, h4, h5, h6, span{
     margin-bottom: 15px;
 }
 .infos-pay-options button{
-    background-color: #d9d99b;
     border: 1px solid #d9d99b;
     border-radius: 1px;
     width: 100%;
@@ -198,7 +196,6 @@ h1, h2, h3, h4, h5, h6, span{
 }
 
 .infos-pay-options button:hover{
-    background-color: #000;
     border: 1px solid #000;
     border-radius: 1px; 
     cursor: pointer;   

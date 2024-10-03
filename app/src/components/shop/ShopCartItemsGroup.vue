@@ -20,7 +20,6 @@ main{
     width: 100%;
     position: relative;
     top: 50px;
-    background-color: #F8F8D9;
 }
 .ShopCartItemList{
     display: grid;
@@ -33,7 +32,6 @@ main{
 .ShopCartItemList-line{
     width: 100%;
     height: 8px;
-    background-color: #d9d99b;
     position: absolute;
 }
 </style>

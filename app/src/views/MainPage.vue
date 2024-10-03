@@ -6,10 +6,20 @@
         <section class="main-content">
             
             <carousel-main :slides="slides" interval="3000"  controls indicators></carousel-main> 
-            <div class="items-header">
-                <h2>NOVIDADES</h2>
+           
+            <div class="newness-items">
+                <div class="items-header">
+                    <h2>NOVIDADES</h2>
+                </div>
+                <items-group :itemObjTest="itemObjTest"></items-group>
             </div>
-            <items-group :itemObjTest="itemObjTest"></items-group>
+
+            <div class="most-sold-items">
+                <div class="items-header">
+                    <h2>MAIS VENDIDOS</h2>
+                </div>
+                <items-group :itemObjTest="itemObjTest"></items-group>
+            </div>
         </section>
         <router-view></router-view>
     </main>
@@ -19,17 +29,17 @@
 
 <script>
 import { ref } from 'vue';
-import CarouselMain from '../carousel/CarouselMain.vue'
-import itemsGroup from '../items/itemsGroup.vue'
+import CarouselMain from '@/components/carousel/CarouselMain.vue'
+import itemsGroup from '@/components/items/itemsGroup.vue'
 export default {
     components: { CarouselMain, itemsGroup },
     name: 'MainPage',
     setup(){
 
         const slides = [
-        "../../../dist/3038640.jpg",
-        "../../../dist/8917889_3981670.jpg",
-        "../../../dist/homem-com-telefone-celular-ao-lado-do-guarda-roupa.jpg",
+        "https://picsum.photos/id/1033/1200/600",
+        "https://picsum.photos/id/1033/1200/600",
+        "https://picsum.photos/id/1033/1200/600",
         "https://picsum.photos/id/1033/1200/600",
         "https://picsum.photos/id/1031/1200/600",
         ]
@@ -56,6 +66,24 @@ export default {
         },
         {
             name: 'Camisa vermelha diferenciada 2.0',
+            dressType: 'camiseta',
+            preco: 200,
+            available: 32,
+        },
+        {
+            name: 'Camisa adasdasd',
+            dressType: 'camiseta',
+            preco: 200,
+            available: 32,
+        },
+        {
+            name: 'Camisa asdasdasd',
+            dressType: 'camiseta',
+            preco: 200,
+            available: 32,
+        },
+        {
+            name: 'Camisa vermelha dadasdasd',
             dressType: 'camiseta',
             preco: 200,
             available: 32,
@@ -90,16 +118,18 @@ h1, h2, h3, h4, h5, a{
 }
 
 .main-content{
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
     max-width: 120rem;
     margin: 0 auto;
+    margin-top: 3.5rem;
 }
 
 .main-bg{
-    background-color: #d9d99b; 
 }
 
 .view-main{
-    height: 100vh;
 }
 
 button{
@@ -108,23 +138,27 @@ button{
     cursor: pointer;
 }
 
+.newness-items, .most-sold-items{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
 
 .items-header h2{
-    color: #8b0000;
+    color: #4169E1;
     transition: all 320ms ease-in-out;
     cursor: initial;
     left: 50rem;
+    font-size: 20px;
+    font-weight: 400px;
 }
 
 .items-header{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: -12rem;
-    margin-top: -5rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
 }
-
-
-
 
 </style>

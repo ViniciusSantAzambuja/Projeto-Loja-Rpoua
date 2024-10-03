@@ -46,6 +46,9 @@ export default{
 
 <style scoped>
 .main-bg{
-    background-color: #d9d99b;
+    margin-top: 3.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: start;
 }
 </style>

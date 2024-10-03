@@ -106,7 +106,6 @@ import CarouselControls from './CarouselControls.vue';
 
 <style scoped>
 .view-main{
-    height: 100vh;
 }
 
 .banner-capa{
@@ -119,7 +118,6 @@ import CarouselControls from './CarouselControls.vue';
     width: 1200px;
     height: 600px;
     overflow: hidden;
-    top: 5rem
 }
 
 .banner-capa .direita {
