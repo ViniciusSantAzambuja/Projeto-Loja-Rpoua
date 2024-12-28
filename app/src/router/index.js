@@ -27,11 +27,6 @@ const routes = [
     component: () => import('../views/PantsView.vue')
   },
   {
-    path: '/single',
-    name: 'single',
-    component: () => import('../components/shop/ShopCartItemsGroup.vue')
-  },
-  {
     path: '/:type/:name',
     name: 'singleItem',
     component: () => import('../components/items/itemSingleVis.vue'),
@@ -39,7 +34,7 @@ const routes = [
   {
     path:'/carrinho',
     name: 'carrinho',
-    component: () => import(/* webpackChunkName: "about" */ '../views/ShoprCartView.vue')
+    component: () => import(/* webpackChunkName: "about" */ '@/shop/view/ShopCartItemsGroup.vue')
   },
   
 ]

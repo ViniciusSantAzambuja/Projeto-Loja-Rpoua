@@ -9,13 +9,8 @@
                         <li><router-link to="/calças">CALÇAS</router-link></li>
                     </ul>
                 </nav>
-                <div class="search-bar-container">
-                        <input type="text" name="search-area" id="search-area" placeholder="O que você está procurando hoje?">
-                        <router-link  to="/">
-                            <fontAwesome icon="magnifying-glass" class="cart-shopping-icon" />
-                        </router-link>
-                </div>
                 <nav class="menu-icons">
+                    <VSearchBar placeholder="Pesquisar produtos"/>
                     <router-link  to="/">
                         <fontAwesome icon="user" class="cart-shopping-icon"/>
                     </router-link  >
@@ -29,7 +24,11 @@
 
 <script>
 import { mapGetters } from 'vuex';
+import VSearchBar from './VSearchBar.vue';
 export default {
+    components: {
+        VSearchBar 
+    },
     mounted(){
         console.log(this.getShowNavBar)
     },
@@ -68,13 +67,11 @@ export default {
 
 .menu-content{
     display: flex;
-    position: relative;
     align-items: center;
-    justify-content: space-between;
-    margin-left: 10rem; 
-    margin-right: 10rem;
-    margin-top: 0.5rem;
-
+    max-width: 100%;
+    height: 100%;
+    justify-content: space-around;
+    padding: 0 1rem;
 }
 
 .menu-content h1{
@@ -124,45 +121,6 @@ export default {
 
 .menu-icons a {
     margin-left: 1.5rem;
-}
-
-.menu-content .search-bar-container{
-    display: flex;
-    top: -0.16rem;
-    align-items: center;
-    margin-left: 20rem;
-}
-
-.menu-content .search-bar-container .cart-shopping-icon{
-    margin-top: 0.11rem;
-    width: 1.5rem;
-    height: 1.5rem;
-    padding: 0.3rem;
-    transition: all 320ms ease-in-out;
-    color: #4169E1;
-}
-
-.menu-content .search-bar-container input{
-    width: 17rem;
-    height: 1.7rem;
-    margin-bottom: 0.1rem;
-    padding-left: 0.1rem;
-    border-radius: 0.5rem;
-    border: none;
-    outline: none;
-}
-
-.menu-content .search-bar-container input:focus{
-    outline: none;
-    border: 2px solid #4169E1;
-    transition: ease-in-out ;
-}
-
-.menu-content .search-bar-container input::placeholder{
-   padding-left: 0.35rem;
-   color: #2C2C2C;
-   font-weight: 600;
-   font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 
 button{

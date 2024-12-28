@@ -50,6 +50,10 @@ export default{
             font-family: 'Rubik', sans-serif;
             color: rgba(0, 0, 0, 0.6);
         }
+
+        >li:hover {
+            color: #ccc;
+        }
     }
 }
 </style>

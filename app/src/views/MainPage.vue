@@ -5,13 +5,23 @@
  <main class="main-bg"> 
         <section class="main-content">
             
-            <carousel-main :slides="slides" interval="3000"  controls indicators></carousel-main> 
+            <carousel-main :slides="slides" :interval="3000"  controls indicators></carousel-main> 
            
             <div class="newness-items">
                 <div class="items-header">
                     <h2>NOVIDADES</h2>
                 </div>
                 <items-group :itemObjTest="itemObjTest"></items-group>
+            </div>
+
+            <div class="banner">
+                <div class="header">
+                    <span>PRIMAVERA 2025</span>
+                    <h3>COLEÇÕES IMPERDIVEIS!!!</h3>
+                    <p>Para se manter atualizado com a nova estação que está chegando.</p>
+                    <button class="shop-btn">COMPRE AGORA</button>
+                </div>
+                <img src="../assets/hero-cover-1.svg" alt="">
             </div>
 
             <div class="most-sold-items">
@@ -21,7 +31,6 @@
                 <items-group :itemObjTest="itemObjTest"></items-group>
             </div>
         </section>
-        <router-view></router-view>
     </main>
 </template>
 
@@ -96,7 +105,6 @@ export default {
             }
         },
     }
-  
 </script>
 
 
@@ -120,16 +128,66 @@ h1, h2, h3, h4, h5, a{
 .main-content{
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 5rem;
     max-width: 120rem;
     margin: 0 auto;
     margin-top: 3.5rem;
 }
 
-.main-bg{
-}
+.banner{
+    background-color: #4169E1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    border-radius: 8px;
+    padding: 0 20px;
 
-.view-main{
+
+    img{
+        position: relative;
+        left: 3%;
+    }
+
+    .header{
+        position: relative;
+        left: 10%;
+        display: flex;
+        align-items: flex-start;
+        width: 100%;
+        flex-flow: column wrap;
+        gap: 1.5rem;
+
+        span {
+            font-size: 20px;
+            font-family: 'Open sans', sans-serif; 
+            color: #F8F8FF
+        }
+
+        h3 {
+            font-size: 42px;
+            color: #121212;
+        }
+
+        p {
+            word-break: break-word;
+            font-size: 20px;
+            font-family: 'Open sans', sans-serif; 
+            color: #cccccc;
+            width: 50%;
+        }
+
+        .shop-btn {
+            font-size: 25px;
+            font-weight: 600;
+            font-family: 'Open sans', sans-serif;
+            background-color: #F8F8FF;
+            width: 40%;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+        }
+    }
 }
 
 button{
