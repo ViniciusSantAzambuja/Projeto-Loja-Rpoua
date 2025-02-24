@@ -4,7 +4,7 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: () => import(/* webpackChunkName: "about" */ '../views/MainPage.vue')
+    component: () => import(/* webpackChunkName: "home" */ '../views/MainPage.vue')
   },
   {
     path: '/about',
@@ -36,7 +36,11 @@ const routes = [
     name: 'carrinho',
     component: () => import(/* webpackChunkName: "about" */ '@/shop/view/ShopCartItemsGroup.vue')
   },
-  
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import(/* webpackChunkName: "login" */  '@/auth/views/VUserLogin.vue')
+  }
 ]
 
 const router = createRouter({

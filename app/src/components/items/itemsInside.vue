@@ -24,17 +24,19 @@ import { RouterLink, RouterView } from 'vue-router';
 export default{
     props: ["itemObjTest"],
     components: { RouterLink, RouterView },
-    methods: { viewItem(item){
-        this.$router.push({
-            path: `/${item.dressType}/${item.name}`,
-            query:{
-                preco: item.preco,
-                dressType: item.dressType,
-                available: item.available,
-            },
-        });
+    methods: { 
+        viewItem(item){
+            this.$router.push({
+                path: `/${item.dressType}/${item.name}`,
+                query:{
+                    preco: item.preco,
+                    dressType: item.dressType,
+                    available: item.available,
+                },
+            
+            });
+        }
     }
- }
 }
 </script>
 

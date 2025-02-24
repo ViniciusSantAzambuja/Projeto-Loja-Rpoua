@@ -43,32 +43,41 @@ export default {
     text-decoration: none;    
     color: #4169E1;
     font-size: 1rem;
+    padding: 0.5rem;
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
     position: relative;
     cursor: pointer;
 }
 
+.icon:hover{
+    color: #121212;
+    background-color: #4169E1;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+
 .search-bar-container{
     display: flex;
     top: -0.16rem;
-    gap: 0.5rem;
     align-items: center;
     justify-content: center;
     margin-left: 20rem;
 }
 
 .search-bar-container input{
-    margin-bottom: 0.1rem;
     padding-left: 0.25rem;
-    border-radius: 0.25rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
     border: none;
     outline: none;
 }
 
 .search-bar-container input:focus{
     outline: none;
-    border: 2px solid #4169E1;
+    border: 1px solid #4169E1;
     transition: ease-in-out ;
 }
 
@@ -79,4 +88,5 @@ export default {
     font-size: 12px;
     font-family: 'Open Sans', sans-serif;
 }
+
 </style>

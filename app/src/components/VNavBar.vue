@@ -11,7 +11,7 @@
                 </nav>
                 <nav class="menu-icons">
                     <VSearchBar placeholder="Pesquisar produtos"/>
-                    <router-link  to="/">
+                    <router-link  to="/login">
                         <fontAwesome icon="user" class="cart-shopping-icon"/>
                     </router-link  >
                     <router-link to="/carrinho">
@@ -76,7 +76,6 @@ export default {
 
 .menu-content h1{
     color: #4169E1;
-    
 }
 
 .menu-content ul{
