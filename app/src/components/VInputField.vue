@@ -2,7 +2,7 @@
     <div class="input-field">
         <label :for="name">{{ label }}</label>
         <input
-            class="input"
+            :class="['input', error ? 'input-error' : ''] "
             :name="name"
             :type="type"
             :placeholder="placeholder"
@@ -11,6 +11,7 @@
             :value="modelValue"
             @input="e => $emit('update:modelValue', e.target.value)"
         />
+        <span v-if="error" class="input-error--message">{{ errorMessage }}</span>
     </div>
 </template>
 
@@ -44,6 +45,14 @@ export default {
         modelValue: {
             type: [String, Number],
             default: ""
+        },
+        error: {
+            type: Boolean,
+            default: false
+        },
+        errorMessage: {
+            type: String,
+            default: "Erro"
         }
     },
 }
@@ -71,6 +80,23 @@ export default {
         border-color: #121212;
         border: 2px solid #121212;
         outline: none;
+        transition: all 0.25s ease-out;
+    }
+    
+    .input:focus {
+        border: 2px solid #4169E1
+    }
+
+    .input-error, .input-error:focus {
+        border: 2px solid red;
+    }
+
+    .input-error--message{
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        color: red;
+        transition: all 350 ease-in;
     }
 }
 </style>

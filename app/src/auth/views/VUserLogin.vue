@@ -1,50 +1,28 @@
 <template>
     <div class="user-login">
+        <VLoading :is-open="isLoading" />
         <h2 class="user-login--header">Login de usuário</h2>
-        <div class="user-login--field">
-            <VInputField
-                v-model="username"
-                type="text" 
-                placeholder="Digite seu nome de usuário" 
-                name="username"
-                label="Nome de usuário *"
-                :required="true"
-            />
-
-            <VInputField 
-                v-model="password"
-                type="password" 
-                placeholder="Digite sua senha" 
-                name="password"
-                label="Senha *"
-                :required="true"
-            />
-
-            <VButtonVue @click="login"/>
-        </div>
+        <VUserLoginForm @login="login"/>
     </div>
 </template>
 
 <script>
-import VInputField from '@/components/VInputField.vue'
-import VButtonVue from '@/components/VButtonVue.vue';
+import VUserLoginForm from '../components/VUserLoginForm.vue';
+import VLoading from '@/components/VLoading.vue';
 export default {
     components: {
-        VInputField,
-        VButtonVue
+        VUserLoginForm,
+        VLoading
     },
     data: () => {
         return {
-            username: "",
-            password: "",
+            isLoading: false,
         }
     },
-    computed: {},
     methods: {
-        login(){
-            console.log(this.username)
-            console.log(this.password)
-        }
+        login(user){
+            console.log(user)
+        },
     }
 }
 </script>
@@ -55,7 +33,7 @@ export default {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 80vh;
     gap: 1rem;
 
     .user-login--header {

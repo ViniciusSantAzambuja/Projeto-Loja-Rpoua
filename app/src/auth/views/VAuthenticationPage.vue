@@ -2,9 +2,9 @@
     <div></div>
 </template>
 
-<script>
+<scirpt>
 
-</script>
+</scirpt>
 
 <style scoped>
 
