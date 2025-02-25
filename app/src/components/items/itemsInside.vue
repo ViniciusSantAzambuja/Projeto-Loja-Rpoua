@@ -21,11 +21,14 @@
 
 <script>
 import { RouterLink, RouterView } from 'vue-router';
+import { mapMutations } from 'vuex';
 export default{
     props: ["itemObjTest"],
     components: { RouterLink, RouterView },
     methods: { 
+        ...mapMutations('shop', ['setProduct']),
         viewItem(item){
+            this.setProduct(item)
             this.$router.push({
                 path: `/${item.dressType}/${item.name}`,
                 query:{

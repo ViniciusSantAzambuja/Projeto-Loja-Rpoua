@@ -31,8 +31,11 @@
 
 <script>
 import store from '@/store';
+import { mapMutations, mapGetters } from 'vuex';
 import CarouselSingleItem from './carouselSingleVis/CarouselSingleItem.vue'
 export default{
+    
+    props:["name"],
     components: { CarouselSingleItem },
     data: () => ({
         slides: ["https://picsum.photos/id/1033/500/500", "https://picsum.photos/id/1035/500/500", "https://picsum.photos/id/1031/500/500"],
@@ -40,7 +43,17 @@ export default{
         currentIndex: -1, 
         item:{}
     }),
+    computed:{
+        ...mapGetters('shop', ['getProduct']),
+        getSelectedSize(){
+            return this.sizes[this.currentIndex];
+        }
+    },
+    mounted() {
+        console.log(this.getProduct)
+    },
     methods: {
+        ...mapMutations(['addProductsToShopCart']),
         setCurrentIndex(index){
             this.currentIndex = index;
         },
@@ -50,29 +63,21 @@ export default{
         },
         //acho melhor tentar de outra forma ou so usar assim msm até eu aprender a usar o vuex 
         addItemToShopCart(){
-        this.$router.push({
-            path: "/carrinho",
-            query: {
-                    price: this.$route.query.preco,
-                    name: this.$route.params.name,
-                    quantity: 1,
-                    size: this.getSelectedSize,
-                }
-            })
-            
             const product = {price: this.$route.query.preco, name: this.$route.params.name, quantity: 1, size: this.getSelectedSize}
             store.commit('addProductsToShopCart', product)
             
+            this.$router.push({
+                path: "/carrinho",
+                query: {
+                        price: this.$route.query.preco,
+                        name: this.$route.params.name,
+                        quantity: 1,
+                        size: this.getSelectedSize,
+                    }
+                })
             
         }
     },
-    computed:{
-        getSelectedSize(){
-            return this.sizes[this.currentIndex];
-        }
-    },
-    props:["name"]
-    
 }
 </script>
 

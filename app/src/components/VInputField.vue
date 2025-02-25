@@ -2,10 +2,10 @@
     <div class="input-field">
         <label :for="name">{{ label }}</label>
         <input
-            :class="['input', error ? 'input-error' : ''] "
+            :class="['input', error ? 'input-error' : '', disabled ? 'input-disabled' : ''] "
             :name="name"
             :type="type"
-            :placeholder="placeholder"
+            :placeholder="disabled ? '' : placeholder"
             :disabled="disabled"
             :required="required"
             :value="modelValue"
@@ -80,7 +80,8 @@ export default {
         border-color: #121212;
         border: 2px solid #121212;
         outline: none;
-        transition: all 0.25s ease-out;
+        transition: all 0.25s ease-in-out;
+        height: 20px;
     }
     
     .input:focus {
@@ -88,15 +89,20 @@ export default {
     }
 
     .input-error, .input-error:focus {
-        border: 2px solid red;
+        border: 2px solid #FF2400;
     }
 
     .input-error--message{
         font-family: 'Open Sans', sans-serif;
         font-weight: 400;
         font-size: 12px;
-        color: red;
+        color: #FF2400;
         transition: all 350 ease-in;
+    }
+
+    .input-disabled {
+        background-color: #F8F8F8 !important;
+        border: 2px solid #121212;
     }
 }
 </style>

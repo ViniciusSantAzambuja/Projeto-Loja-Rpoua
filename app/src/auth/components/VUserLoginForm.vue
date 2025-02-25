@@ -26,6 +26,12 @@
                 text="Entrar" 
                 @click="login"
             />
+                
+            <VButtonVue
+                style-btn="secondary"
+                text="Criar conta" 
+                @click="goToSignUp"
+            />
         </div>
 </template>
 
@@ -81,6 +87,9 @@ export default {
                 this.user.password.error = true
                 this.user.password.errorMessage = "Campo obrigatório"
             }
+        },
+        goToSignUp() {
+            this.$router.push({ name: 'signup' })
         }
     }
 }

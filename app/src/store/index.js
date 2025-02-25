@@ -1,4 +1,6 @@
 import { createStore } from 'vuex'
+import auth from "@/auth/store/store"
+import shop from "@/shop/store/store"
 
 const store = createStore({
     state: {
@@ -18,7 +20,7 @@ const store = createStore({
         },
         removeProductFormShopCart(state, productToRemove){
             state.products = state.products.filter((product) => {return product !== productToRemove})
-        }
+        },
     },
     getters:{
         getTotalOrderPrice(state){
@@ -29,9 +31,11 @@ const store = createStore({
         },
         getShowNavBar(state){
             return state.hasNavBar
-        }
+        },
     },
 })
 
+store.registerModule('auth', auth)
+store.registerModule('shop', shop)
 
 export default store
